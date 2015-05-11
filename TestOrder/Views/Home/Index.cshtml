@@ -1,0 +1,20 @@
+﻿@model TestOrder.Models.OrderModel
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Order Cost</td>
+        </tr>
+        <input type="text" name="SearchText"/>
+        <input type="submit" value="Get Orders"/>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.ID</td>
+                <td>@order.OrderCost</td>
+            </tr>
+        }
+    </table>
+}
